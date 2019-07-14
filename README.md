@@ -3,6 +3,7 @@ Very Simple State Machine
 
 Now that I think about it, this is a completely useless project. It was meant to be a way to inject scripts in the browser. Since the browser is stateless, this is a state machine for it. It uses local storage to store the state and data.
 
+Unless you really need to inject a script and run it in the browser, you should use Puppeteer: https://github.com/GoogleChrome/puppeteer
 You can define a full process, and when the browser navigates, it will take off from where it stopped.
 
 `Webpack` is also configured to be able to bundle the script into one package. To use, please clone this repo.
