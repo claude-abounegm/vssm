@@ -1,0 +1,30 @@
+{
+    "name": "vssm",
+    "version": "1.0.0",
+    "description": "Browser State Machine",
+    "main": "index.js",
+    "scripts": {
+        "test": "nyc --reporter=html --reporter=text mocha ./test/spec/**/*.js",
+        "coverage": "nyc report --reporter=text-lcov | coveralls",
+        "build": "webpack",
+        "dev": "webpack-dev-server"
+    },
+    "author": "Claude Abounegm (cabounegm@incomestore.com)",
+    "license": "MIT",
+    "dependencies": {
+        "lodash": "^4.17.14"
+    },
+    "devDependencies": {
+        "webpack": "^4.35.3",
+        "webpack-cli": "^3.3.6",
+        "webpack-dev-server": "^3.7.2",
+        "chai": "^4.2.0",
+        "coveralls": "^3.0.5",
+        "mocha": "^6.1.4",
+        "nyc": "^14.1.1",
+        "eslint": "^6.0.0",
+        "prettier": "^1.18.2",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-config-prettier": "^5.0.0"
+    }
+}
