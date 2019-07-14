@@ -15,7 +15,7 @@ class StateMachine {
         try {
             const value = localStorage.getItem(STORAGE_KEY);
             this._data = value ? JSON.parse(value) : {};
-        } catch {
+        } catch (e) {
             this._data = {};
         }
     }
@@ -85,11 +85,7 @@ class StateMachine {
                         return reject(new Error('opts needs to be an object'));
                     }
 
-                    const {
-                        step,
-                        goTo,
-                        stop
-                    } = (opts || {});
+                    const { step, goTo, stop } = opts || {};
 
                     let newIndex = cmdIndex + 1;
                     if (_.isFinite(step)) {
@@ -106,9 +102,7 @@ class StateMachine {
                     this._set('index', newIndex);
 
                     // recurse but not really
-                    setImmediate(() => {
-                        resolve(this._runNext());
-                    });
+                    setImmediate(() => resolve(this._runNext()));
                 }
             );
         });
